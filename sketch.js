@@ -1,18 +1,21 @@
-var veryHungry = false;
+var cautious = false;
 
 function setup() {
 
   // Change these to change the title and author of the story
-  document.getElementById('title').innerHTML="Goldilocks & the Three Bears"; // title
+  document.getElementById('title').innerHTML="Little Red Riding Hood "; // title
 
-  document.getElementById('author').innerHTML="Jon Stapleton"; // author
+  document.getElementById('author').innerHTML="Precious"; // author
 
 
   
   // All of your code goes under here
   
 
-  var story = 'Goldilocks has been lost in the woods for ' + many() + ' hours. Eventually she discovers a house, and smells something delicious. ' + delicious(); // Create the text
+  var story = 'while traviling through the woods with her basket filled with food. Red Riding Hood get to a 3 way path. She decides on taking path ' + many() + '. On her way she spots a wolf. ' + wolf(); // Create the text
+
+  var story2 = " While traveling through the woods with her basket filled with food. Red Riding Hood get to a 3 way path. She decides on taking path" 
+
 
   printToPage(story); // Print the text to the webpage
 }
@@ -22,30 +25,46 @@ function setup() {
 // Put your functions below here:
 
 function many() {
-  let hours = Math.floor(random(1, 6)); // Random number rounded down
-  if(hours > 3) {
-    veryHungry = true;
+  let path = Math.floor(random(1, 4)); // Random number rounded down
+ 
+  if(path > 3) {
+    cautious = true;
   }
-  return hours
+  return path
 }
 
-function delicious() {
-  if(veryHungry == true) {
-    return "Goldilocks is very hungry, so she goes inside."
+function wolf () {
+  let wolf = Math.floor(random(1, 6)); // Random number rounded down
+ 
+  if(cautious == true) {
+    return ""
   } else {
-    let inspection = inspects();
-    return inspection;
+    let basket = food();
+    return basket;
   }
 }
 
-function inspects() {
-  let insp = random(1, 6);
-  if(insp > 5) {
-    return "Goldilocks sees fresh bear tracks leaving the house!"
+function food() {
+  let fb = random(1, 6);
+  if(fb > 3) {
+    return "What's in your basket Little Red Rididng Hood?" +find();
   } else {
-    return "Goldilocks inspects the house and everything seems alright. She goes inside."
+    return "The wolf finds Red Rididng Hood unintresting and leaves."  
   }
 }
+
+function find ()
+
+return "Little red riding hood finds her grandma lying sick in bed " +find();
+
+return "finds her grandma baking cookies" +find();
+
+return"There's no one there only a note from grandma saying she'll come back soon from the blueberry garden." +find();
+
+
+
+
+
 
 
 //Don't delete this!
